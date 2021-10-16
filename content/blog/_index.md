@@ -1,9 +1,9 @@
 ---
-title: A Blog That Works
+title: Um Blog que tenta funcionar
 description: |
-  This is a fully featured blog that supports categories, 
-  tags, series, and pagination.
-author: "The R Markdown Team @RStudio"
+  Um blog com categoras, 
+  tags, series, e paginação.
+author: "R. Accioly"
 show_post_thumbnail: true
 show_author_byline: true
 show_post_date: true
@@ -12,28 +12,26 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Sidebar for Your Thoughts
+  title: Alguns comentários
   description: |
-    This is a fully featured blog that supports categories,
-    tags, series, and pagination. Even this sidebar offers 
-    a ton of customizations.
+    Como não poderia deixar de ser este blog é uma tarefa inacabada e sempre em construção e manutenção.
     
-    Check out the _index.md file in the /blog folder 
-    to edit this content. 
-  author: "The R Markdown Team @RStudio"
-  text_link_label: Subscribe via RSS
+#    Check out the _index.md file in the /blog folder 
+#    to edit this content. 
+  author: "R.Accioly"
+  text_link_label: Subscreva via RSS
   text_link_url: /index.xml
   show_sidebar_adunit: false # show ad container
 
 # set up common front matter for all pages inside blog/
 cascade:
-  author: "The R Markdown Team @RStudio"
+  author: "R. Accioly"
   show_author_byline: true
   show_post_date: true
   show_disqus_comments: false # see disqusShortname in site config
   # for single-sidebar layout
   sidebar:
-    text_link_label: View recent posts
+    text_link_label: Veja os posts recentes
     text_link_url: /blog/
     show_sidebar_adunit: false # show ad container
 ---
