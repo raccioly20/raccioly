@@ -1,30 +1,28 @@
-# Hugo Apéro
-
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hugo-apero/iyo-apero)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dfa8a8fa-cca0-4917-aae5-27d89527b7ff/deploy-status)](https://app.netlify.com/sites/silly-babbage-223d45/deploys)
+# Tutoriais Virtuais para Aprendizagem da linguagem R
 
 
-# _Hugo Apéro_ - a personal website theme made for Hugo by [RStudio](https://rstudio.com/). 
+# _TVAPLR_  
 
-Based on [Blogophonic](https://github.com/formspree/blogophonic-hugo) by [Formspree](https://formspree.io).
+Estes tutorias têm como objetivo fazer uma introdução amigável do R, [R Project for Statistical Computing](https://www.r-project.org/). 
 
-A modern, beautiful, and easily configurable theme for Hugo websites. It offers more than a blog, with flexible custom layouts that help you introduce yourself online.
+Existem milhares de fontes de informação sobre o R e sua linguagem na Web, provavelmente 99% deles são em inglês. 
 
-**See the demo site [here](https://hugo-apero.netlify.com)**
+Por mais que saibamos que seja fundamental saber inglês, pois nesta língua é que você vai encontrar maior parte das fontes de informação, queremos que estes tutoriais atinjam um número maior de pessoas no Brasil, sendo uma fonte de conhecimento sobre o R, através de exemplos escritos em português e usando bases de dados abertas do Brasil. [Dados Abertos](https://dados.gov.br/)    
 
-**Read the docs [here](https://hugo-apero-docs.netlify.com)**
+Aqui você vai encontrar tutoriais para aprendizagem da linguagem R. Eles foram desenvolvidos usando o pacote [learnr](https://rstudio.github.io/learnr/).
 
-![screenshot](static/img/screenshot.png)
+Este é um site em construção e portanto as atualizaçõe serão frequentes.
 
-## Three reasons to use Apéro
+Esta é a lista atual de tutoriais:
 
-1. **Apéro is thoughtfully crafted** with features a personal website _should have_: a proper "about" page; multiple layouts - including one with a sidebar; custom sidebar text with a sticky ad container; option to hide byline, dateline, and thumbnail images.
+1. **Instalando o R e o RStudio:** [TVAPLR-1](https://tvalr.shinyapps.io/tvalr_01/).
 
-2. **Good looks are baked in** - use a built-in color theme and choose your fonts. You can have a distinct (in a good way!) site without fannying around with any CSS or font files. Plus everything **also** looks good on mobile, thanks to the responsive Tachyons CSS framework.
+2. **Comandos Básicos 1:** [TVAPLR-2](https://tvalr.shinyapps.io/tvalr_02/)
 
-3. **Batteries included** - all of these just work "out of the box": social links (Font Awesome & Academicons); social sharing images and metadata; featured thumbnail images (with special support for hexagon shapes); syntax highlighting (via Chroma); commenting (via utterances); contact form (via Formspree). 
+3. **Comandos Básicos 2:**  [TVAPLR-3](https://tvalr.shinyapps.io/tvalr_03/)
+
+4. **Explorando os dados:** [TVAPLR-4](https://tvalr.shinyapps.io/tvalr_04/)
+
 
 ## Usage
 

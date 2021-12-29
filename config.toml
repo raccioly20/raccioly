@@ -1,7 +1,7 @@
 baseURL = "/"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Projeto R"
+title = "Tutoriais Virtuais para Aprendizado da Linguagem R"
 author = "Ricardo Accioly"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
