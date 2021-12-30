@@ -1,7 +1,7 @@
 baseURL = "/"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Tutoriais Virtuais para Aprendizado da Linguagem R"
+title = "Mais Blog"
 author = "Ricardo Accioly"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -30,10 +30,10 @@ enableEmoji = true
 [params]
   orgName = "UERJ"
   orgLocal = "Rio de Janeiro"
-  description = "Um teste inicial de blog com Hugo."
+  description = "Um blog com Hugo."
   favicon = "/img/favicon.ico"
   logo = "/img/blogophonic-mark-dark.png"
-  mainSections = ["blog", "project", "talk"]
+  mainSections = ["blog", "project"]
   navallcaps = false
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -76,7 +76,7 @@ enableEmoji = true
   [[params.social]]
        icon      = "github" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://github.com/raccioly20/iyo-apero"
+      url       = "https://github.com/raccioly20"
  # [[params.social]]
 #      icon      = "facebook-square" # icon name without the 'fa-'
 #      icon_pack = "fab"
@@ -101,7 +101,7 @@ enableEmoji = true
 
 [menu]
   [[menu.header]]
-    name = "About"
+    name = "Sobre"
     title = "Sobre .."
     url = "/about/"
     weight = 1

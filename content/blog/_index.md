@@ -1,5 +1,5 @@
 ---
-title: Um Blog que tenta funcionar
+title: Blog
 description: |
   Um blog com categoras, 
   tags, series, e paginação.
@@ -14,12 +14,12 @@ layout: list-sidebar # list, list-sidebar, list-grid
 sidebar: 
   title: Alguns comentários
   description: |
-    Como não poderia deixar de ser este blog é uma tarefa inacabada e sempre em construção e manutenção.
+    Esta tarefa de construir um blog é um pouco espinhosa, mas aos poucos os resultados vão surgindo!
     
 #    Check out the _index.md file in the /blog folder 
 #    to edit this content. 
   author: "R.Accioly"
-  text_link_label: Subscreva via RSS
+#  text_link_label: Subscreva via RSS
   text_link_url: /index.xml
   show_sidebar_adunit: false # show ad container
 

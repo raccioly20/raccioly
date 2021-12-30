@@ -1,7 +1,7 @@
 ---
 title: "Ricardo Accioly"
 subtitle: "Professor do IME/UERJ"
-description: "O objetivo aqui é divulgar a linguagem R num site escrito, em sua maior parte, em português. Existe uma grande quantidade de opções de conhecimento da linguagem R em inglês, mas quase nada em português."
+description: "A idéia deste site é divulgar informações interessantes sobre a linguagem R e Ciência de Dados"
 date: 
 images:
   - img/cristoJB.jpg
