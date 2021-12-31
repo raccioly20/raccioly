@@ -1,7 +1,7 @@
 ---
-title: A Project Portfolio To Grow
-description: "Give your projects a place to live online."
-author: "The R Markdown Team @RStudio"
+title: Um Portfolio a ser construído
+description: "Uma janela para os projetos."
+author: "R. Accioly"
 show_post_thumbnail: true
 show_author_byline: true
 show_post_date: false
@@ -10,12 +10,11 @@ layout: list-grid # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Sidebar for Your Projects
+  title: Projetos
   description: |
-    Projects can be anything!
-    Check out the _index.md file in the /project folder 
-    to edit this content.
-  author: "The R Markdown Team @RStudio"
+    Tutoriais Virtuais para Aprendizagem da Linguagem R
+
+  author: "R. Accioly"
   text_link_label: ""
   text_link_url: ""
   show_sidebar_adunit: false # show ad container

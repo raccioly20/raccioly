@@ -1,7 +1,7 @@
 baseURL = "/"
 theme = "hugo-apero"
 languageCode = "en"
-title = "Mais Blog"
+title = "Mais um Blog"
 author = "Ricardo Accioly"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -77,7 +77,7 @@ enableEmoji = true
        icon      = "github" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://github.com/raccioly20"
- # [[params.social]]
+# [[params.social]]
 #      icon      = "facebook-square" # icon name without the 'fa-'
 #      icon_pack = "fab"
 #      url       = "https://www.facebook.com/hashtag/ap%C3%A9ro"
@@ -85,10 +85,10 @@ enableEmoji = true
 #      icon      = "instagram" # icon name without the 'fa-'
 #     icon_pack = "fab"
 #      url       = "https://www.instagram.com/explore/tags/apero/"
-#  [[params.social]]
-#      icon      = "twitter" # icon name without the 'fa-'
-#      icon_pack = "fab"
-#      url       = "https://twitter.com/hashtag/apéro"
+  [[params.social]]
+      icon      = "twitter" # icon name without the 'fa-'
+      icon_pack = "fab"
+      url       = "https://twitter.com/r_accioly"
   [[params.social]]
       icon      = "rss" # icon name without the 'fa-'
       icon_pack = "fas"
@@ -122,11 +122,11 @@ enableEmoji = true
 #    weight = 4
     
   # Configure footer  
-  [[menu.footer]]
-    name = "License"
-    title = "License"
-    url = "/license/"
-    weight = 1
+#  [[menu.footer]]
+#    name = "License"
+#    title = "License"
+#    url = "/license/"
+#    weight = 1
  # [[menu.footer]]
 #    name = "Contact"
 #    title = "Contact form"

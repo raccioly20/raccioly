@@ -1,7 +1,7 @@
 ---
 title: Blog
 description: |
-  Um blog com categoras, 
+  Um blog com categorias, 
   tags, series, e paginação.
 author: "R. Accioly"
 show_post_thumbnail: true
