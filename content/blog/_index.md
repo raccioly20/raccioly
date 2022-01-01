@@ -15,6 +15,8 @@ sidebar:
   title: Alguns comentários
   description: |
     Esta tarefa de construir um blog é um pouco espinhosa, mas aos poucos os resultados vão surgindo!
+    Após muita pesquisa, leituras e tentativas frustadas, consegui construir o que está aqui a partir da excelente explicação da [Dr. Alison Hill](https://www.youtube.com/watch?v=RksaNh5Ywbo) que foi feita num curso online que foi ministrado no R-Ladies Tunis em maio de 2021. 
+    Você constrói a partir de um exemplo bem detalhado, mas que mesmo assim dá bastante trabalho!   
     
 #    Check out the _index.md file in the /blog folder 
 #    to edit this content. 
