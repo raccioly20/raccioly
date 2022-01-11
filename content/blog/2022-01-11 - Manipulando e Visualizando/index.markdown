@@ -147,7 +147,9 @@ head(frota_veiculos)
 As bibliotecas que vamos usar aqui são a `dplyr` e a `ggplot2` que serão usadas na manipulação e visualização de dados. 
 
 
-Vamos primeiro conhecer o que tem no gapminder. A base de dados possui 43812 linhas
+Vamos primeiro conhecer o que tem no arquivo de frota nacional de veículos de outubro de 2021. 
+
+A base de dados possui 43812 linhas
 
 
 ```r
