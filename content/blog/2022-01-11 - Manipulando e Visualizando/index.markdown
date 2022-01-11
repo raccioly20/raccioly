@@ -477,7 +477,7 @@ frota_SE <- frota_veiculos %>%
 
 
 ```r
-## Criar uum gráfico de barar de número de veículos por Estado
+## Criar um gráfico de barras de número de veículos por Estado do SE
 ggplot(frota_SE, aes(x = UF, y = t_veiculos)) +
   geom_bar(stat = "identity")
 ```
@@ -485,4 +485,20 @@ ggplot(frota_SE, aes(x = UF, y = t_veiculos)) +
 <img src="imagens/Aula01/grafico_barra1-1.png" width="576" />
 
 Veja que para informar o número total de carros nos estados tivemos de usar `stat="identity"`. Caso não tivessemos usado isso o que teríamos era a contagem de registros. 
+
+## Melhorando a apresentação
+
+
+```r
+ggplot(frota_SE, aes(x = UF, y = t_veiculos)) +
+  geom_bar(stat = "identity") +
+  theme_light() +
+  labs(
+    x = "Estados do Sudeste",
+    y = "Quant. Veículos (Mil)",
+    title = "Total de Veículos no SE"
+  )
+```
+
+<img src="imagens/Aula01/grafico_barra2-1.png" width="576" />
 
