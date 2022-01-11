@@ -10,10 +10,6 @@ series:
 tags:
 categories:
 layout: single
-output:
-  html_document:
-    toc: yes
-    code_download: yes
 ---
 
 
