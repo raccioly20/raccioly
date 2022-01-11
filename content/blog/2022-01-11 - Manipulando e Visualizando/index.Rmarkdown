@@ -159,8 +159,27 @@ frota_RJ2 %>% select(municipio, combustivel, quantidade) #selecionando 3 colunas
 ## Criando colunas com mutate
 
 ```{r criando_coluna}
-frota_RJ2 %>% mutate(quantidade_mil = quantidade/1000) %>% head() %>%
-  knitr::kable(booktabs = TRUE)
+frota_RJ2 <- frota_RJ2 %>% mutate(quantidade_mil = quantidade/1000)
+frota_RJ2 %>% head() %>% knitr::kable(booktabs = TRUE)
+```
+
+## Selecionando alguns tipos de combustivel / sumarizando
+
+```{r sum1}
+## Criar um gráfico de barras de número de veículos por combústivel no RJ
+S_frota_RJ2 <- frota_RJ2 %>% filter(combustivel=="GASOLINA" |
+                                    combustivel=="DIESEL" |
+                                    combustivel=="ALCOOL") %>%
+                             group_by(combustivel) %>%
+                             summarize(t_veiculos=sum(quantidade_mil))
+```
+
+
+## Gráfico de Barras usando o ggplot2
+
+```{r barra0}
+ggplot(S_frota_RJ2, aes(x = combustivel, y=t_veiculos)) +
+  geom_bar(stat = "identity")
 ```
 
 

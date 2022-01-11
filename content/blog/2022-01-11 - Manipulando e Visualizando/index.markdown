@@ -437,8 +437,8 @@ frota_RJ2 %>% select(municipio, combustivel, quantidade) # selecionando 3 coluna
 
 
 ```r
+frota_RJ2 <- frota_RJ2 %>% mutate(quantidade_mil = quantidade / 1000)
 frota_RJ2 %>%
-  mutate(quantidade_mil = quantidade / 1000) %>%
   head() %>%
   knitr::kable(booktabs = TRUE)
 ```
@@ -453,6 +453,30 @@ frota_RJ2 %>%
 |RIO DE JANEIRO |ANGRA DOS REIS |DIESEL                      |       3862|          3.862|
 |RIO DE JANEIRO |ANGRA DOS REIS |ELETRICO/FONTE EXTERNA      |          7|          0.007|
 |RIO DE JANEIRO |ANGRA DOS REIS |ELETRICO/FONTE INTERNA      |          2|          0.002|
+
+## Selecionando alguns tipos de combustivel / sumarizando
+
+
+```r
+## Criar um gráfico de barras de número de veículos por combústivel no RJ
+S_frota_RJ2 <- frota_RJ2 %>%
+  filter(combustivel == "GASOLINA" |
+    combustivel == "DIESEL" |
+    combustivel == "ALCOOL") %>%
+  group_by(combustivel) %>%
+  summarize(t_veiculos = sum(quantidade_mil))
+```
+
+
+## Gráfico de Barras usando o ggplot2
+
+
+```r
+ggplot(S_frota_RJ2, aes(x = combustivel, y = t_veiculos)) +
+  geom_bar(stat = "identity")
+```
+
+<img src="imagens/Aula01/barra0-1.png" width="576" />
 
 
 ## Sumarizando por Região
