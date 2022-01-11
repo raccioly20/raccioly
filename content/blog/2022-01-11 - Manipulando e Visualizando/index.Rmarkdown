@@ -1,0 +1,190 @@
+---
+title: "Carregando dados, Manipulando e Visualizando"
+subtitle: ""
+excerpt: "Lençóis"
+date: 2022-01-11
+author: "Ricardo Accioly"
+draft: false
+images:
+series:
+tags:
+categories:
+layout: single
+output:
+  html_document:
+    toc: yes
+    code_download: yes
+---
+
+
+```{r setup, include=FALSE}
+options(digits = 3)
+knitr::opts_chunk$set(echo = TRUE, tidy = "styler", fig.height=3.5, fig.width=6, dev=c("png"), fig.path="imagens/Aula01/")
+
+```
+
+
+## Entrada de dados no R
+
+## Lendo dados de arquivos CSV
+
+```{r csv}
+library(tidyverse)
+## Vamos definir a url de onde vamos fazer download dos dados
+url <- "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/ie/derivados/importacoes-exportacoes-derivados-2000-2021.csv"
+# O read.delim permite você definir qual o delimitador(;)
+imp_exp_deriv <- url %>% read_delim(delim=";", show_col_types = FALSE)
+head(imp_exp_deriv)
+```
+
+Observe que as colunas estão todas em maiúsculas e com nomes meio grandes
+
+Vamos começar corrigindo os nomes das colunas
+
+```{r colunas}
+imp_exp_deriv <- imp_exp_deriv %>% 
+                  rename(ano = ANO, mes=MÊS,produto=PRODUTO,
+                         oper_comer=`OPERAÇÃO COMERCIAL`,
+                         imp_exp=`IMPORTADO / EXPORTADO`,
+                         disp_receita=`DISPÊNDIO / RECEITA`)
+```
+
+
+Veja que a coluna Importado / Exportado veio como texto
+
+Como no R a casa  decimal é dada por "." temos que substituir nossa "," por ponto e depois transformar em número.
+
+```{r numero}
+imp_exp_deriv$imp_exp <-  as.numeric(gsub(",", ".", gsub("\\.", "", imp_exp_deriv$imp_exp)))
+```
+
+
+Agora vamos ver como ficou a importação de dados
+```{r kable}
+
+knitr::kable(head(imp_exp_deriv,10), booktabs = TRUE,
+  caption = 'Importação e Exportação de Derivados' )                                                 
+```
+
+
+## Lendo dados de arquivos excel no diretório
+
+```{r excel}
+library(readxl)
+frota_veiculos <- read_excel("d_frota_por_uf_municipio_combustivel_outubro_2021.xlsx")
+head(frota_veiculos)
+```
+
+
+
+## Bibliotecas
+
+As bibliotecas que vamos usar aqui são a `dplyr` e a `ggplot2` que serão usadas na manipulação e visualização de dados. 
+
+
+Vamos primeiro conhecer o que tem no gapminder. A base de dados possui `r  nrow(frota_veiculos)` linhas
+
+```{r conhecendo_dados}
+class(frota_veiculos)  # Tipo de base de dados
+summary(frota_veiculos) # Sumario da base de dados
+head(frota_veiculos)   # Primeiras linhas da base de dados
+str(frota_veiculos)     # tipo de dados 
+```
+
+
+
+## Dados da frota de veículos
+
+1) UF = Unidade Federativa
+2) Município
+3) Combustível Veículo
+4) Qtd. Veículos
+
+Vamos ver quais informações de Estados nós temos
+
+```{r listaUF}
+uf <- frota_veiculos %>% select(UF) %>% unique() %>% arrange(UF) #crescente
+knitr::kable(uf, booktabs = TRUE,
+  caption = 'Uma tabela mais elegante' )
+```
+
+Vamos eliminar nomes de Estados errados/ não informados
+
+```{r elimninando}
+frota_veiculos <- frota_veiculos %>% filter(UF!="Sem Informação" & UF!= "Não Identificado" & UF!= "Não se Aplica")
+uf <- frota_veiculos %>% select(UF) %>% unique() %>% arrange(UF) #crescente
+knitr::kable(uf, booktabs = TRUE,
+  caption = 'Lista de Estados' )
+```
+
+
+
+```{r filtro_RJ}
+## Cria um extrato para o Estado do Rio de Janeiro
+frota_RJ <- filter(frota_veiculos, UF == "RIO DE JANEIRO")
+head(frota_RJ)
+```
+
+
+## Manipulação de dados
+Vamos renomear alguns nomes de colunas
+
+```{r nomes_portugues, message=FALSE}
+frota_RJ2 <- frota_RJ %>% 
+          rename(municipio = Município, combustivel = 'Combustível Veículo' , quantidade = 'Qtd. Veículos')
+# melhorando a visualização dos dados
+knitr::kable(
+  head(frota_RJ2, 10), booktabs = TRUE )
+```
+
+
+## Ordenando pela Quantidade de Veículos
+
+```{r ordenação}
+frota_RJ2 %>% arrange(quantidade) #crescente
+```
+
+## Ordenando decrescente
+
+```{r ordenação-decresc}
+frota_RJ2 %>% arrange(desc(quantidade)) #decrescente
+```
+
+## Selecionando colunas
+
+```{r selecionando}
+frota_RJ2 %>% select(municipio, combustivel, quantidade) #selecionando 3 colunas
+```
+
+## Criando colunas com mutate
+
+```{r criando_coluna}
+frota_RJ2 %>% mutate(quantidade_mil = quantidade/1000) %>% head() %>%
+  knitr::kable(booktabs = TRUE)
+```
+
+
+## Sumarizando por Região
+
+```{r sumarizando}
+frota_SE <- frota_veiculos %>% 
+            rename(municipio = Município, 
+                   combustivel = 'Combustível Veículo' ,
+                   quantidade = 'Qtd. Veículos') %>% 
+            mutate(quantidade_mil = quantidade/1000) %>%
+            filter(UF=="RIO DE JANEIRO" | UF=="MINAS GERAIS" | 
+                   UF=="SAO PAULO" | UF=="ESPIRITO SANTO") %>%
+  group_by(UF) %>% summarize(t_veiculos=sum(quantidade_mil))
+```
+
+
+## Gráficos de barras usando ggplot2
+
+```{r grafico_barra1}
+## Criar uum gráfico de barar de número de veículos por Estado
+ggplot(frota_SE, aes(x = UF, y=t_veiculos)) +
+  geom_bar(stat = "identity")
+```
+
+Veja que para informar o número total de carros nos estados tivemos de usar `stat="identity"`. Caso não tivessemos usado isso o que teríamos era a contagem de registros. 
+
