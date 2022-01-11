@@ -16,11 +16,11 @@ links:
 - icon: door-open
   icon_pack: fas
   name: website
-  url: https://raccioly20.github.io/
+  url: https://raccioly20.github.io/tvaplr.github.io/
 - icon: github
   icon_pack: fab
   name: code
-  url: https://github.com/raccioly20/raccioly20.github.io
+  url: https://github.com/raccioly20/tvaplr.github.io
 ---
 
 
