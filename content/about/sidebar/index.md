@@ -1,7 +1,7 @@
 ---
 ## Configure sidebar content in narrow column
 author: "Ricardo Accioly"
-role: "Professor no IME/UERJ"
+role: "Professor Adjunto da UERJ"
 avatar_shape: rounded # circle, square, rounded
 show_social_links: true # specify social accounts in site config
 #show_audio_link: true
