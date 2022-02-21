@@ -1,6 +1,6 @@
 ---
 title: "Ricardo Accioly"
-subtitle: "Professor do IME/UERJ"
+subtitle: "Professor Adjunto da UERJ"
 description: "A idéia deste site é divulgar informações interessantes sobre a linguagem R e Ciência de Dados"
 date: 
 images:
